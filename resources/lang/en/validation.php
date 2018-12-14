@@ -31,6 +31,26 @@ return [
     ],
     'boolean'              => 'The :attribute field must be true or false.',
     'confirmed'            => 'The :attribute confirmation does not match.',
+    'custom'               =>[
+        'name'    =>[
+            'required' => '用戶名不能为空！',
+            'min'      => '用戶名不能小于3位！',
+            'max'      => '用戶名不能大于50位！'
+
+        ],
+        'email'   =>[
+            'required' => '邮箱地址不能为空！',
+            'email' => '邮箱格式不對！',
+            'unique:users'=>'該郵箱已被註冊！',
+            'max'      => '郵箱不能大于255位！'
+        ],
+        'password'   =>[
+            'required' => '密碼不能为空！',
+            'email' => '兩次密碼不匹配！',
+            'min'      => '密碼不能小于6位！'
+        ]
+
+    ],
     'date'                 => 'The :attribute is not a valid date.',
     'date_format'          => 'The :attribute does not match the format :format.',
     'different'            => 'The :attribute and :other must be different.',
